@@ -1,0 +1,22 @@
+{
+  "name": "movies-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yevavin/filmlibrary.git"
+  },
+  "keywords": [
+    "film"
+  ],
+  "author": "Yeva Vinnytska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yevavin/filmlibrary/issues"
+  },
+  "homepage": "https://github.com/yevavin/filmlibrary#readme"
+}
