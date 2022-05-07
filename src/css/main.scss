@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+@import './variables';
 @import "./common";
 @import "../components/header/header";
-@import '../components/slider/slider'
+@import '../components/slider/slider';
+@import '../components/movieCollection/movie-item';
+
+@import './responsive';

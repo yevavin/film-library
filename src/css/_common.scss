@@ -60,7 +60,11 @@ select {
 
 // global
 
+body {
+    background-color: #fff;
+}
+
 .container {
-  max-width: 85%;
+  min-width: 90%;
   margin: 0 auto;
 }

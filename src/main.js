@@ -1,3 +1,4 @@
-import { getTrendingMoviesImage } from "./service.js";
+import { getTrendingMovies, getAllMovies } from "./service.js";
 
-getTrendingMoviesImage();
+getTrendingMovies();
+getAllMovies();

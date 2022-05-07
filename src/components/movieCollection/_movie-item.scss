@@ -1,0 +1,39 @@
+
+.movies_all {
+
+    &__collection {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 30px 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    &__item {
+        width: 100%;
+        border: 1px solid rgb(85, 2, 2);
+        box-shadow: 4px 4px 10px rgba(85, 2, 2, 0.5);
+        border-radius: $cardBorderRadius;
+        overflow: hidden;
+        color: #000;
+
+        .bottom {
+            padding: 26px 10px 12px;
+
+            h3 {
+                font-size: 1em;
+                font-weight: 700;
+            }
+
+            a {
+                color: #000;
+            }
+
+            .date {
+                opacity: 0.5;
+            }
+        }
+    }
+}
