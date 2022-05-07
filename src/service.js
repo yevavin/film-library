@@ -1,3 +1,5 @@
+import { setCarouselItems } from "./components/slider/slider.js";
+
 const API_KEY = "api_key=beb91ae92c1db29a0fa50adedb55ba5f";
 const BASE_URL = "https://api.themoviedb.org/3";
 const TREND_WEEK_URL = BASE_URL + "/trending/movie/week?";
@@ -12,37 +14,9 @@ async function getTrendingMovies() {
   })
     .then((response) => response.json())
     .then((data) => {
-      return data;
-    })
-    .then((data) => {
       setCarouselItems(data.results.splice(0, 3));
     })
     .catch(() => null);
-}
-
-function setCarouselItems(data) {
-  data.forEach((movie, i) => {
-    const imageSrc = movie.backdrop_path;
-    const movieTitle = movie.title;
-    const overview = movie.overview;
-    const el =
-      i == 0
-        ? `<div class="carousel-item active">
-                    <div class="overlay-image" style="background-image: url('https://image.tmdb.org/t/p/original${imageSrc}');"></div>
-                    <div class="container">
-                         <h1>${movieTitle}</h1>
-                        <p>${overview}</p>
-                    </div>
-                </div>`
-        : `<div class="carousel-item">
-                    <div class="overlay-image" style="background-image: url('https://image.tmdb.org/t/p/original${imageSrc}');"></div>
-                    <div class="container">
-                         <h1>${movieTitle}</h1>
-                        <p>${overview}</p>
-                    </div>
-                </div>`;
-    document.querySelector(".carousel-inner").innerHTML += el;
-  });
 }
 
 async function getAllMovies() {
@@ -51,10 +25,7 @@ async function getAllMovies() {
     contentType: "application/json",
   })
     .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-      displayMovies(data.results);
-    })
+    .then((data) => displayMovies(data.results))
     .catch(() => null);
 }
 
