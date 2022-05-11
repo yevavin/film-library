@@ -1,0 +1,10 @@
+.footer {
+    background-color: pink;
+    opacity: 0.3;
+  &__container {
+    height: 60px;
+    margin-top: 30px;
+    padding: 10px 0;
+    text-align: center;
+  }
+}

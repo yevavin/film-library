@@ -19,8 +19,8 @@ async function getTrendingMovies() {
     .catch(() => null);
 }
 
-async function getAllMovies() {
-  await fetch(ALL_MOVIES_URL, {
+async function getAllMovies(page) {
+  await fetch(ALL_MOVIES_URL + `&page=${page}`, {
     method: "GET",
     contentType: "application/json",
   })
@@ -31,13 +31,15 @@ async function getAllMovies() {
 
 function displayMovies(data) {
   const container = document.querySelector("#moviesAll");
+  const tmpContainer = document.createElement('div');
   data.forEach((movie) => {
+    const movieId = movie.id;
     const imgSrc = IMAGE_BASE_URL + movie.poster_path;
     const title = movie.title;
     const vote = movie.vote_average;
     const releaseDate = movie.release_date;
     const el = `
-            <div class="movies_all__item">
+            <div class="movies_all__item" id="${movieId}">
                 <a href="#">
                     <img src="${imgSrc}" alt="${title}">
                 </a>
@@ -50,8 +52,9 @@ function displayMovies(data) {
                 </div>
             </div>
         `;
-    container.innerHTML += el;
-  });
+    tmpContainer.innerHTML += el;
+});
+    container.innerHTML = tmpContainer.innerHTML;
 }
 
 export { getTrendingMovies, getAllMovies };

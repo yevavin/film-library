@@ -1,6 +1,11 @@
+@media screen and (min-width: 320px) {
+}
+
 @media screen and (min-width: 375px) {
-  .container {
-    min-width: 85%;
+  .movies_all {
+    &__collection {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 

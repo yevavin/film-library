@@ -58,6 +58,13 @@ select {
   font: inherit;
 }
 
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
 body {
   background-color: #fff;
 }
@@ -146,10 +153,11 @@ body {
 
 .movies_all__collection {
   margin-top: 30px;
+  margin-bottom: 30px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   gap: 30px 20px;
@@ -186,9 +194,22 @@ body {
   opacity: 0.5;
 }
 
+.footer {
+  background-color: pink;
+  opacity: 0.3;
+}
+
+.footer__container {
+  height: 60px;
+  margin-top: 30px;
+  padding: 10px 0;
+  text-align: center;
+}
+
 @media screen and (min-width: 375px) {
-  .container {
-    min-width: 85%;
+  .movies_all__collection {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 

@@ -56,6 +56,10 @@ button,
 textarea,
 select {
   font: inherit;
+  
+  &:focus {
+      outline: none;
+  }
 }
 
 // global

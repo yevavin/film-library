@@ -10,7 +10,7 @@
 
     <title>Movie App</title>
   </head>
-  <body>
+  <body id="body">
     <header class="header">
       <div class="header_container container">
         <div class="header__logo">
@@ -81,9 +81,32 @@
     </div>
 
     <section class="movies_all">
-        <div id="moviesAll" class="movies_all__collection container">
-        </div>
+        <div class="movies_all__collection container" id="moviesAll"></div>
     </section>
+
+    <div class="container">
+        <nav aria-label="pagination">
+            <ul class="pagination justify-content-center">
+                <li class="page-item active">
+                  <a href="javascript:void(0)" class="page-link" data-pagination-page="1">1</a>
+                </li>
+                <li class="page-item">
+                  <a href="javascript:void(0)" class="page-link" data-pagination-page="2">2</a>
+                </li>
+                <li class="page-item">
+                  <a href="javascript:void(0)" class="page-link" data-pagination-page="3">3</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+
+    <footer class="footer">
+        <div class="footer__container container">
+            Copyright &copy; 2022 Yeva Vinnytska
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
