@@ -1,0 +1,72 @@
+.popup-wrapper {
+    z-index: 99999;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_hidden {
+        display: none;
+    }
+}
+
+.popup-container {
+    position: relative;
+    background: rgba($color: #fff, $alpha: 0.8);
+    backdrop-filter: blur(10px);
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+
+    &__media {
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    &__description{
+        margin-top: 20px;
+    }
+
+    &__header {
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 700;
+            span {
+                color: rgba($color: #000000, $alpha: 0.6);
+                font-weight: 400;
+            }
+        }
+    }
+    
+    &__overview {
+        margin-top: 20px;
+    }
+
+    &__btns-panel {
+        margin-top: 20px;
+        text-align: center;
+        a {
+            padding: 5px 7px;
+            border-radius: 5px;
+        }
+
+        .btn_watch-later {
+            background-color: rgb(121, 201, 255);
+        }
+
+        .btn_watched {
+            background-color: rgb(127, 202, 127);
+        }
+
+    }
+}

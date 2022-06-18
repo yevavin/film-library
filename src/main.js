@@ -9,5 +9,3 @@ const pagination = document.querySelector(".pagination");
 
 getTrendingMovies();
 getAllMovies(1);
-pagination.addEventListener("click", onPaginationClick);
-

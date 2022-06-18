@@ -1,4 +1,5 @@
 import { setCarouselItems } from "./components/slider/slider.js";
+import { onMovieItemClickHandler } from "./components/moviePopup/popup.js";
 
 const API_KEY = "api_key=beb91ae92c1db29a0fa50adedb55ba5f";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -25,7 +26,10 @@ async function getAllMovies(page) {
     contentType: "application/json",
   })
     .then((response) => response.json())
-    .then((data) => displayMovies(data.results))
+    .then((data) => {
+      displayMovies(data.results);
+      onMovieItemClickHandler();
+    })
     .catch(() => null);
 }
 
@@ -40,7 +44,7 @@ function displayMovies(data) {
     const releaseDate = movie.release_date;
     const el = `
             <div class="movies_all__item" id="${movieId}">
-                <a href="#">
+                <a href="javascript:void(0)" class="movies_all__poster" id="poster_${movieId}">
                     <img src="${imgSrc}" alt="${title}">
                 </a>
                 <div class="bottom">
@@ -56,5 +60,11 @@ function displayMovies(data) {
 });
     container.innerHTML = tmpContainer.innerHTML;
 }
+
+async function getMovieData(id) {
+  await fetch(BASE_URL + `/movie/${id}?` + API_KEY)
+}
+
+
 
 export { getTrendingMovies, getAllMovies };
