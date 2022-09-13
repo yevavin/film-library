@@ -13,16 +13,34 @@
 }
 
 @media screen and (min-width: 540px) {
+
   .movies_all {
     &__collection {
       grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .popup-container {
+
+    &__media {
+      float: left;
+      margin-right: 20px;
+      align-self: start;
+      margin-bottom: 0px;
+      width: 50%;
+      max-height: 400px;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+    }
     }
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    min-width: 600px;
+    width: 70%;
   }
 
   .movies_all {
