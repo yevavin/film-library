@@ -18,22 +18,37 @@
     position: relative;
     background: rgba($color: #fff, $alpha: 0.8);
     backdrop-filter: blur(10px);
-    max-width: 300px;
+    width: 70vw;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 30px 20px;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 
+    .btn-close {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #909090;
+        cursor: pointer;
+    }
+
     &__media {
         border-radius: 20px;
         overflow: hidden;
+        width: 100%;   
+        max-height: 200px;
+        margin-bottom: 20px;
+    
+        img {
+                
+        }
     }
 
     &__description{
-        margin-top: 20px;
     }
 
     &__header {
@@ -53,20 +68,42 @@
     }
 
     &__btns-panel {
+        width: 100%;
         margin-top: 20px;
         text-align: center;
-        a {
+
+        button {
+            border: 2px solid black;
+            background-color: white;
+            color: #000000;
             padding: 5px 7px;
             border-radius: 5px;
+            cursor: pointer;
+            transition: .3s ease;
         }
 
         .btn_watch-later {
-            background-color: rgb(121, 201, 255);
+            border-color: rgb(121, 201, 255);
+            background-color: #fff;
+
+            &:hover {
+                background-color: rgb(121, 201, 255);
+                transition: .3s ease;
+            }
         }
 
         .btn_watched {
-            background-color: rgb(127, 202, 127);
+            border-color: rgb(127, 202, 127);
+            background-color: #fff;
+
+            &:hover {
+                background-color: rgb(127, 202, 127);
+                transition: .3s ease;
+            }
         }
 
     }
+}
+
+.popup-content {
 }

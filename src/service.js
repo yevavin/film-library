@@ -1,15 +1,15 @@
 import { setCarouselItems } from "./components/slider/slider.js";
 import { onMovieItemClickHandler } from "./components/moviePopup/popup.js";
 
-const API_KEY = "api_key=beb91ae92c1db29a0fa50adedb55ba5f";
-const BASE_URL = "https://api.themoviedb.org/3";
-const TREND_WEEK_URL = BASE_URL + "/trending/movie/week?";
-const ALL_MOVIES_URL =
+export const API_KEY = "api_key=beb91ae92c1db29a0fa50adedb55ba5f";
+export const BASE_URL = "https://api.themoviedb.org/3";
+export const TREND_WEEK_URL = BASE_URL + "/trending/movie/week?";
+export const ALL_MOVIES_URL =
   BASE_URL + `/discover/movie?${API_KEY}&sort_by=popularity.desc`;
-const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
+export const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
-async function getTrendingMovies() {
-  await fetch(TREND_WEEK_URL + API_KEY, {
+function getTrendingMovies() {
+  fetch(TREND_WEEK_URL + API_KEY, {
     method: "GET",
     contentType: "application/json",
   })
@@ -20,8 +20,8 @@ async function getTrendingMovies() {
     .catch(() => null);
 }
 
-async function getAllMovies(page) {
-  await fetch(ALL_MOVIES_URL + `&page=${page}`, {
+function getAllMovies(page) {
+  fetch(ALL_MOVIES_URL + `&page=${page}`, {
     method: "GET",
     contentType: "application/json",
   })
@@ -45,7 +45,9 @@ function displayMovies(data) {
     const el = `
             <div class="movies_all__item" id="${movieId}">
                 <a href="javascript:void(0)" class="movies_all__poster" id="poster_${movieId}">
-                    <img src="${imgSrc}" alt="${title}">
+                    <div>
+                      <img src="${imgSrc}" alt="${title}">
+                    </div>
                 </a>
                 <div class="bottom">
                     <div class="rating">${vote}%</div>
@@ -60,11 +62,5 @@ function displayMovies(data) {
 });
     container.innerHTML = tmpContainer.innerHTML;
 }
-
-async function getMovieData(id) {
-  await fetch(BASE_URL + `/movie/${id}?` + API_KEY)
-}
-
-
 
 export { getTrendingMovies, getAllMovies };
