@@ -40,7 +40,7 @@ function displayMovies(data) {
     const movieId = movie.id;
     const imgSrc = IMAGE_BASE_URL + movie.poster_path;
     const title = movie.title;
-    const vote = movie.vote_average;
+    const vote = (movie.vote_average).toFixed(1);
     const releaseDate = movie.release_date;
     const el = `
             <div class="movies_all__item" id="${movieId}">

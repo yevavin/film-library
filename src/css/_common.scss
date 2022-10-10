@@ -41,6 +41,9 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #121212;
+  color: #fff;
 }
 
 /* Make images easier to work with */
@@ -60,12 +63,6 @@ select {
   &:focus {
       outline: none;
   }
-}
-
-// global
-
-body {
-    background-color: #121212;
 }
 
 .container {

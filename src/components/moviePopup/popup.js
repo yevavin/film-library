@@ -11,7 +11,7 @@ const popupTemplate = (data) => `
           <div class="popup-container__header">
             <h2>${data.title}</h2>
               <span class="release_date">${data.release_date}</span>
-            <p class="genre">${data.genres.join(', ')}</p>
+            <p class="genre">${data.genres.map((item) => {return item.name}).join(', ')}</p>
           </div>
           <div class="popup-container__overview">
             <p>
@@ -21,7 +21,6 @@ const popupTemplate = (data) => `
         </div>
         <div class="popup-container__btns-panel">
           <button class="btn_watch-later">Watch Later</button>
-          <button class="btn_watched">Watched</button>
         </div>
 `
 

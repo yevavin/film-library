@@ -10,6 +10,7 @@ const MAX_PAGE = 3
 pagination.addEventListener('click', onPaginationClick)
 
  function onPaginationClick(e) {
+  debugger
   // on page btns click
   if (e.target.dataset.paginationPage) {
     pageBtns.forEach((btn) => {
