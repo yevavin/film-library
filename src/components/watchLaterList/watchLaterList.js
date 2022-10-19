@@ -1,4 +1,3 @@
-//import {API_KEY, BASE_URL, IMAGE_BASE_URL} from '../../service.js'
 const API_KEY = "api_key=beb91ae92c1db29a0fa50adedb55ba5f";
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
@@ -49,16 +48,14 @@ function getWatchLaterList() {
     
     if (!watchLaterList.length) {
     watchLaterContainer.innerHTML = `
-            <div>No movies added</div>
+            <div class="movies_all__watch-later container">No movies added</div>
         `;
   }
 }
 
 function deleteMovie() {
   const deleteBtnList = document.querySelectorAll(".delete-btn");
-  debugger
   deleteBtnList.forEach(btn => btn.addEventListener("click", (e) => {
-    console.log(`onDeleteClick: ${e.target.parentNode.getAttribute('id')}`);
     
     const movieId = e.target.parentNode.getAttribute('id');
 
@@ -67,5 +64,15 @@ function deleteMovie() {
 
     localStorage.setItem('watchLater', JSON.stringify(filteredWatchLaterList));
     e.target.parentNode.remove()
+
+    const watchLaterContainer = document.getElementById("contentWrapper");
+    const list = localStorage.getItem("watchLater") || "[]";
+    const watchLaterList = JSON.parse(list);
+
+    if (!watchLaterList.length) {
+      watchLaterContainer.innerHTML = `
+              <div class="movies_all__watch-later container">No movies added</div>
+          `;
+    }
   }))
 }

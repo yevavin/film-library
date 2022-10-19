@@ -20,7 +20,7 @@ const popupTemplate = (data) => `
           </div>
         </div>
         <div class="popup-container__btns-panel">
-          <button class="btn_watch-later">Watch Later</button>
+          <button class="btn_watch-later">Add to Watch Later</button>
         </div>
 `
 
