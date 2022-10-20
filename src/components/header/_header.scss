@@ -3,6 +3,7 @@
     min-height: 90px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     background-color: #000;
+    position: relative;
     
     &_container {
         padding: 15px;
@@ -32,53 +33,34 @@
 
     &__navbar {
 
-        ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            
-            li {
-                padding: 5px 0;
-                display: inline-block;
-                position: relative;
-                
-                &:nth-child(2n) {
-                    margin-left: 20px;
-                }
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+        padding: 0 7px;
+        border-radius: 3px;
+        background-color: rgb(226, 178, 19);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 30px;
+        margin: auto 0;
+        transition: 0.2s;
+        text-transform: uppercase;
+        font-size: 14px;
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 100%;
-                    transform: scaleX(0);
-                    height: 2px;
-                    bottom: 0;
-                    left: 0;
-                    background-color: #faf063;
-                    transform-origin: bottom right;
-                    transition: transform 0.2s ease-out;
-                }
-                
-                &:hover {
-                    text-shadow:
-                    0 0 5px #fff,
-                    0 0 40px #faf063,
-                    0 0 80px #faf063,
-                    0 0 90px #faf063;
-
-                    &::after {
-                        transform: scaleX(1);
-                        transform-origin: bottom left;
-                    }
-                }
-            }
+        img {
+            width: 32px;
+            height: auto;
         }
 
         a {
-            color: #fff;
+            display: none;
+        }
+
+        &:hover {
+            transform: scale(1.1);
         }
     }
 }

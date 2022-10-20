@@ -1,6 +1,3 @@
-@media screen and (min-width: 320px) {
-}
-
 @media screen and (min-width: 375px) {
   .movies_all {
     &__collection {
@@ -31,6 +28,7 @@
       max-height: 400px;
 
       img {
+        display: block;
         max-height: 100%;
         max-width: 100%;
     }
@@ -46,6 +44,21 @@
   .movies_all {
     &__collection {
       grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  .header {
+
+    &__navbar {
+
+      a {
+          display: inline;
+          color: #111;
+      }
+
+      img {
+        margin-right: 5px;
+      }
     }
   }
 }

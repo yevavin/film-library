@@ -5,7 +5,7 @@ const popupWrapper = document.querySelector(".popup-wrapper");
 
 const popupTemplate = (data) => `
         <div class="popup-container__media">
-          <img src="${IMAGE_BASE_URL + data.poster_path}" alt="">
+          <img src="${IMAGE_BASE_URL + data.poster_path}" alt="${data.title}">
         </div>
         <div class="popup-container__description">
           <div class="popup-container__header">
@@ -20,7 +20,7 @@ const popupTemplate = (data) => `
           </div>
         </div>
         <div class="popup-container__btns-panel">
-          <button class="btn_watch-later">Add to Watch Later</button>
+          <button class="btn_watch-later btn_watch-later_active">+ Watch Later</button>
         </div>
 `
 
@@ -39,6 +39,13 @@ export function onMovieItemClickHandler() {
         .then((response) => response.json())
         .then(data => {
           document.querySelector('.popup-wrapper .popup-content').innerHTML = popupTemplate(data)
+
+          if(JSON.parse(localStorage.getItem("watchLater")).includes(movieId)) {
+            document.querySelector('.btn_watch-later').classList.remove("btn_watch-later_active")
+            document.querySelector('.btn_watch-later').classList.add("btn_watch-later_blocked")
+            document.querySelector('.btn_watch-later').innerHTML = "Added to watch later"
+          }
+
           popupWrapper.classList.remove("popup-wrapper_hidden");
           onWatchLaterClick(movieId);
         })
@@ -58,6 +65,13 @@ function onWatchLaterClick(movieId) {
     } else {
       watchLaterList.push(movieId);
       localStorage.setItem('watchLater', JSON.stringify(watchLaterList));
+    }
+
+    // change class
+    if (e.target.classList.contains("btn_watch-later_active")) {
+      e.target.classList.remove("btn_watch-later_active")
+      e.target.classList.add("btn_watch-later_blocked")
+      e.target.innerHTML = "Added to watch later"
     }
   });
 }
