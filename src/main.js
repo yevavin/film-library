@@ -1,5 +1,5 @@
 import { getTrendingMovies, getAllMovies } from "./service.js";
-//import { getWatchLaterList } from './components/watchLaterList/watchLaterList.js'
+import {onPaginationClick} from "./components/pagination/pagination.js"
 
 // variables
 
@@ -7,3 +7,4 @@ import { getTrendingMovies, getAllMovies } from "./service.js";
 
 getTrendingMovies();
 getAllMovies(1);
+onPaginationClick()
