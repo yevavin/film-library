@@ -27,6 +27,7 @@ const popupTemplate = (data) => `
 
 export function onMovieItemClickHandler() {
   const moviesPosters = document.querySelectorAll(".movies_all__poster");
+  debugger
   moviesPosters.forEach((poster) => {
     poster.addEventListener("click", (e) => {
       
@@ -40,10 +41,13 @@ export function onMovieItemClickHandler() {
         .then(data => {
           document.querySelector('.popup-wrapper .popup-content').innerHTML = popupTemplate(data)
 
-          if(JSON.parse(localStorage.getItem("watchLater")).includes(movieId)) {
-            document.querySelector('.btn_watch-later').classList.remove("btn_watch-later_active")
-            document.querySelector('.btn_watch-later').classList.add("btn_watch-later_blocked")
-            document.querySelector('.btn_watch-later').innerHTML = "Added to watch later"
+          const LocalStorageValue = JSON.parse(localStorage.getItem("watchLater"))
+          if (LocalStorageValue != null) {
+            if(LocalStorageValue.includes(movieId)) {
+              document.querySelector('.btn_watch-later').classList.remove("btn_watch-later_active")
+              document.querySelector('.btn_watch-later').classList.add("btn_watch-later_blocked")
+              document.querySelector('.btn_watch-later').innerHTML = "Added to watch later"
+            }
           }
 
           popupWrapper.classList.remove("popup-wrapper_hidden");
