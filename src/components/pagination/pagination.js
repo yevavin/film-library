@@ -10,8 +10,8 @@ const MAX_PAGE = 3
 pagination.addEventListener('click', onPaginationClick)
 
  function onPaginationClick(e) {
-  debugger
   // on page btns click
+  debugger
   if (e.target.dataset.paginationPage) {
     pageBtns.forEach((btn) => {
       btn.classList.remove("active");
@@ -21,23 +21,6 @@ pagination.addEventListener('click', onPaginationClick)
     getAllMovies(pageValue)
     document.querySelector("#heroCarousel").scrollIntoView();
   }
-
-  // on arrows click
-  /*
-    if (e.target.dataset.paginationBtn) {
-      const activePage = pagination.querySelector(".page-link.active");
-      let activePageValue = Number(activePage.dataset.paginationPage);
-
-      if (e.target.dataset.paginationBtn === "prev" && activePageValue > MIN_PAGE) {
-          getAllMovies(activePageValue - 1);
-
-        }
-
-      if (e.target.dataset.paginationBtn === "next" && activePageValue < MAX_PAGE) {
-          getAllMovies(activePageValue + 1);
-        }
-    } 
-    */
 }
 
 export {onPaginationClick}

@@ -27,7 +27,6 @@ const popupTemplate = (data) => `
 
 export function onMovieItemClickHandler() {
   const moviesPosters = document.querySelectorAll(".movies_all__poster");
-  debugger
   moviesPosters.forEach((poster) => {
     poster.addEventListener("click", (e) => {
       
