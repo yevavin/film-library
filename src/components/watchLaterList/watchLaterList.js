@@ -32,9 +32,7 @@ function getWatchLaterList() {
                         </a>
                         <div class="bottom">
                             <div class="rating">${vote}%</div>
-                            <h3 class="title">
-                                <a href="#">${title}</a>
-                            </h3>
+                            <h3 class="title">${title}</h3>
                             <p class="date">${releaseDate}</p>
                             </div>
                         <div class="delete-btn"></div>
