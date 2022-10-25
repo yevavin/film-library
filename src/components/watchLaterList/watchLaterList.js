@@ -25,11 +25,9 @@ function getWatchLaterList() {
             const releaseDate = data.release_date;
             const el = `
                     <div class="movies_all__item" id="${movieId}">
-                        <a href="javascript:void(0)" class="movies_all__poster" id="poster_${movieId}">
-                            <div>
-                              <img src="${imgSrc}" alt="${title}">
-                            </div>
-                        </a>
+                        <div>
+                          <img src="${imgSrc}" alt="${title}">
+                        </div>
                         <div class="bottom">
                             <div class="rating">${vote}%</div>
                             <h3 class="title">${title}</h3>
